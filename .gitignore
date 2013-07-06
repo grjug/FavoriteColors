@@ -1,0 +1,11 @@
+# built application files
+8.apk
+*.ap_
+
+*.dex
+*.class
+bin/
+gen/
+local.properties
+.classpath
+.project
