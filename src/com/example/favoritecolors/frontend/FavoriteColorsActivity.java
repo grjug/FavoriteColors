@@ -1,4 +1,4 @@
-package com.example.favoritecolors;
+package com.example.favoritecolors.frontend;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,21 +6,27 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import com.example.favoritecolors.R;
+import com.example.favoritecolors.backend.service.FavoriteColorsService;
+
 public class FavoriteColorsActivity extends Activity {
+	
+	private FavoriteColorsService service = null;
+	ListView lv;
+	ArrayAdapter<Object> fcAdapter;
+	Object[] favoriteColors;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_favorite_colors);
+		
+		service = ((FavoriteColorsApplication) getApplication()).getService();
 
-		ListView lv = (ListView) findViewById(R.id.favoriteColorsListView);
-		String[] favoriteColors = new String[] { "Blue", "Red", "Yellow", "Orange" };
-		ListAdapter fcAdapter = new ArrayAdapter<String>(this, R.layout.favorite_colors_list_item,
-				favoriteColors);
-		lv.setAdapter(fcAdapter);
+		lv = (ListView) findViewById(R.id.favoriteColorsListView);
+		setAdapter();
 	}
 
 	@Override
@@ -41,6 +47,18 @@ public class FavoriteColorsActivity extends Activity {
 		default:
 			return super.onOptionsItemSelected(item);
 		}
+	}
+	
+	private void setAdapter() {
+		fcAdapter = new ArrayAdapter<Object>(this, R.layout.favorite_colors_list_item,
+				service.findAllColors());
+		lv.setAdapter(fcAdapter);
+	}
+	
+	@Override
+	protected void onResume() {
+		setAdapter();
+		super.onResume();
 	}
 
 }

@@ -12,9 +12,10 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.Holo.Light">
+        android:theme="@android:style/Theme.Holo.Light"
+        android:name="com.example.favoritecolors.frontend.FavoriteColorsApplication">
         <activity
-            android:name="com.example.favoritecolors.FavoriteColorsActivity"
+            android:name="com.example.favoritecolors.frontend.FavoriteColorsActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.favoritecolors.NewColorActivity"/>
+            android:name="com.example.favoritecolors.frontend.NewColorActivity"/>
     </application>
 
 </manifest>
