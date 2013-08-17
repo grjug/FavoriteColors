@@ -14,8 +14,8 @@ public class FavoriteColorsController {
 		colorList.add(color);
 	}
 
-	public Object[] findAll() {
-		return colorList.toArray();
+	public ArrayList<String> findAll() {
+		return colorList;
 	}
 	
 }

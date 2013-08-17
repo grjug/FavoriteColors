@@ -1,5 +1,7 @@
 package com.example.favoritecolors.backend.service;
 
+import java.util.ArrayList;
+
 import com.example.favoritecolors.backend.controller.FavoriteColorsController;
 
 public class FavoriteColorsService {
@@ -14,7 +16,7 @@ public class FavoriteColorsService {
 		this.colorController.addColor(color);
 	}
 
-	public Object[] findAllColors() {
+	public ArrayList<String> findAllColors() {
 		return this.colorController.findAll();
 	}
 }

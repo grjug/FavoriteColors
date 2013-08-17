@@ -1,5 +1,8 @@
 package com.example.favoritecolors.frontend;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,21 +15,23 @@ import com.example.favoritecolors.R;
 import com.example.favoritecolors.backend.service.FavoriteColorsService;
 
 public class FavoriteColorsActivity extends Activity {
-	
+
 	private FavoriteColorsService service = null;
-	ListView lv;
-	ArrayAdapter<Object> fcAdapter;
-	Object[] favoriteColors;
+	private ArrayAdapter<String> adapter;
+	private List<String> favoriteColors = new ArrayList<String>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_favorite_colors);
-		
-		service = ((FavoriteColorsApplication) getApplication()).getService();
 
-		lv = (ListView) findViewById(R.id.favoriteColorsListView);
-		setAdapter();
+		service = ((FavoriteColorsApplication) getApplication()).getService();
+		favoriteColors = service.findAllColors();
+
+		ListView lv = (ListView) findViewById(R.id.favoriteColorsListView);
+		adapter = new ArrayAdapter<String>(this, R.layout.favorite_colors_list_item,
+				favoriteColors);
+		lv.setAdapter(adapter);
 	}
 
 	@Override
@@ -48,16 +53,12 @@ public class FavoriteColorsActivity extends Activity {
 			return super.onOptionsItemSelected(item);
 		}
 	}
-	
-	private void setAdapter() {
-		fcAdapter = new ArrayAdapter<Object>(this, R.layout.favorite_colors_list_item,
-				service.findAllColors());
-		lv.setAdapter(fcAdapter);
-	}
-	
+
 	@Override
 	protected void onResume() {
-		setAdapter();
+		if (adapter != null) {
+			adapter.notifyDataSetChanged();
+		}
 		super.onResume();
 	}
 
