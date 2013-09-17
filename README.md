@@ -22,5 +22,4 @@ FavoriteColors
 
 ### Round 3 - Service Introduction
 * [Meetup](http://www.meetup.com/gr-jug/events/123803542/)
-* [Video on YouTube](https://www.youtube.com/watch?v=fhi1_FzIwfo)
 * [Completed Code on Github](https://github.com/grjug/FavoriteColors/releases/tag/v1.2)
