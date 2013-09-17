@@ -18,7 +18,7 @@ Demo Application for Learning Android from the ground up.
 * [Video on YouTube](https://www.youtube.com/watch?v=fhi1_FzIwfo)
 * [Presentation Slides](https://docs.google.com/presentation/d/11RHs9yKUrFtSZGShMSKRhCd2uwy5-V4CrmUM4ohgzpw/edit?pli=1#slide=id.p13)
 * [Completed Code on Github](https://github.com/grjug/FavoriteColors/tree/v1.1)
-* [Completed code for challenge (dethtungue's version)](https://github.com/dethtungue/GRJUG_ANDROID)
+* [Completed code for challenge (dethtungue)](https://github.com/dethtungue/GRJUG_ANDROID)
 
 ### Round 3 - Service Introduction
 * [Meetup](http://www.meetup.com/gr-jug/events/123803542/)
