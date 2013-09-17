@@ -1,7 +1,7 @@
 FavoriteColors
 ==============
 
-Demo Application for Learning Android from the ground up. 
+[Demo Application](https://github.com/grjug/FavoriteColors) for Learning Android from the ground up. 
 
 * [Google+ Community](https://plus.google.com/u/0/communities/103314203601881861807)
 * [Meetup Group](http://www.meetup.com/gr-jug/)
